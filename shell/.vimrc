@@ -68,3 +68,5 @@ augroup END
 "make it easy to edit the vimrc file"
 nmap ,ev :tabedit $MYVIMRC<cr>
 nmap ,<space> :nohlsearch<cr>
+
+set backspace=indent,eol,start
