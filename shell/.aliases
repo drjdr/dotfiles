@@ -17,7 +17,7 @@ alias pf="phpunit --filter "
 alias d="php artisan dusk"
 alias df="php artisan dusk --filter"
 alias sshconfig="vi ~/.ssh/config"
-alias copykey='command cat ~/.ssh/id_rsa.public | pbcopy'
+alias copykey='command cat ~/.ssh/id_rsa.pub | pbcopy'
 
 # JavaScript
 alias jest="./node_modules/.bin/jest"
@@ -35,7 +35,7 @@ alias o="open ."
 alias l="ls -laF"
 
 # PhpStorm
-alias phpstorm='open -a /Applications/PhpStorm.app "`pwd`"'
+alias phpstorm='open -a /Applications/PhpStorm.app `pwd`'
 
 # Redis
 alias flush-redis="redis-cli FLUSHALL"

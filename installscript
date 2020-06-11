@@ -100,6 +100,14 @@ brew install php@7.1
 brew install php@7.2
 brew install php@7.4
 
+echo 'Install Redis'
+echo '-------------'
+brew install redis
+
+echo 'Install Mailhog'
+echo '---------------'
+brew install mailhog
+
 echo 'Install imagemagick'
 echo '-------------------'
 brew install imagemagick
