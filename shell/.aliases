@@ -36,6 +36,7 @@ alias l="ls -laF"
 
 # PhpStorm
 alias phpstorm='open -a /Applications/PhpStorm.app `pwd`'
+alias pycharm='open -a /Applications/PyCharm.app `pwd`'
 
 # Redis
 alias flush-redis="redis-cli FLUSHALL"
