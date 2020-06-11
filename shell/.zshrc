@@ -15,7 +15,7 @@ DEFAULT_USER=`whoami`
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git laravel4 laravel5 composer osx vagrant)
+plugins=(git laravel4 laravel5 composer osx vagrant zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,8 +85,12 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Extra paths
 export PATH="$HOME/.composer/vendor/bin:$PATH"
-export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH="/usr/local/opt/node@8/bin:$PATH"
-
+export PATH="/usr/local/anaconda3.bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/Code/flutter/bin:$PATH"
+export PATH="$HOME/Code/spark-installer:$PATH"
+export PATH="$HOME/Code/connectiq-sdk/bin:$PATH"
