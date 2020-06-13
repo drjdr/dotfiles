@@ -22,6 +22,9 @@ alias copykey='command cat ~/.ssh/id_rsa.pub | pbcopy'
 # JavaScript
 alias jest="./node_modules/.bin/jest"
 
+# Python
+alias hidepycache="find . -name '__pycache__' -exec chflags hidden {} \;"
+
 # Git
 alias gc="git checkout"
 alias gpo="git push origin"
