@@ -77,3 +77,7 @@ alias npmspatie="npm config set registry https://npm.spatie.be"
 
 # Restart touch bar
 alias touchbar="killall ControlStrip"
+
+# TimeCapsule Backups
+alias speedupbackup="sudo sysctl debug.lowpri\_throttle_enabled=0"
+alias speeddownbackup="sudo sysctl debug.lowpri\_throttle_enabled=1"
