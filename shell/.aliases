@@ -15,7 +15,7 @@ alias nah='git reset --hard;git clean -df'
 alias p="phpunit"
 alias pf="phpunit --filter "
 alias d="php artisan dusk"
-alias df="php artisan dusk --filter"
+# alias df="php artisan dusk --filter"
 alias sshconfig="vi ~/.ssh/config"
 alias copykey='command cat ~/.ssh/id_rsa.pub | pbcopy'
 
