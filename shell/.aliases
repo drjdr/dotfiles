@@ -81,3 +81,7 @@ alias touchbar="killall ControlStrip"
 # TimeCapsule Backups
 alias speedupbackup="sudo sysctl debug.lowpri\_throttle_enabled=0"
 alias speeddownbackup="sudo sysctl debug.lowpri\_throttle_enabled=1"
+
+# Laravel Deploy AA
+alias deploy-app-augmented-anatomy-com-production="cd ~/Code/serve-it/Infrastructure/Sites/app.augmented-anatomy.com && envoy run deploy --env=production; cd ~/Code/app.augmented-anatomy.com/"
+alias deploy-app-augmented-anatomy-com-develop="cd ~/Code/serve-it/Infrastructure/Sites/app.augmented-anatomy.com && envoy run deploy --env=develop; cd ~/Code/app.augmented-anatomy.com/"
