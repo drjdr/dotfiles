@@ -12,6 +12,41 @@ if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+
+## INSTALL SYMLINKS
+
+# Add global gitignore
+ln -s $HOME/.dotfiles/shell/.global-gitignore $HOME/.global-gitignore
+git config --global core.excludesfile $HOME/.global-gitignore
+
+# Symlink zsh prefs
+rm $HOME/.zshrc
+ln -s $HOME/.dotfiles/shell/.zshrc $HOME/.zshrc
+
+# Symlink vim prefs
+rm $HOME/.vimrc
+ln -s $HOME/.dotfiles/shell/.vimrc $HOME/.vimrc
+rm $HOME/.vim
+ln -s $HOME/.dotfiles/shell/.vim $HOME/.vim
+
+# Symlink yarn prefs
+rm $HOME/.yarnrc
+ln -s $HOME/.dotfiles/shell/.yarnrc $HOME/.yarnrc
+
+# Symlink the Mackup config
+ln -s $HOME/.dotfiles/macos/.mackup.cfg $HOME/.mackup.cfg
+
+# Fix missing font characters (see https://github.com/robbyrussell/oh-my-zsh/issues/1906)
+cd ~/.oh-my-zsh/themes/
+git checkout d6a36b1 agnoster.zsh-theme
+
+# Activate z
+cd ~/.dotfiles/shell
+chmod +x z.sh
+
+
+#### INSTALL HOMEBREW PACKAGES
+
 # Update Homebrew recipes
 brew update
 
@@ -20,34 +55,44 @@ brew tap homebrew/bundle
 brew bundle
 
 # Set default MySQL root password and auth type
-mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'password'; FLUSH PRIVILEGES;"
+mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'rootroot'; FLUSH PRIVILEGES;"
 
 # Install PHP extensions with PECL
 pecl install imagick memcached redis swoole
 
 # Install global Composer packages
-/usr/local/bin/composer global require laravel/installer laravel/valet beyondcode/expose
+composer global require laravel/installer laravel/valet beyondcode/expose
 
 # Install Laravel Valet
-$HOME/.composer/vendor/bin/valet install
+valet install
 
 # Create a Sites directory
-mkdir $HOME/Sites
+#mkdir $HOME/Sites
 
 # Create sites subdirectories
-mkdir $HOME/Sites/blade-ui-kit
-mkdir $HOME/Sites/eventsauce
-mkdir $HOME/Sites/laravel
+#mkdir $HOME/Sites/blade-ui-kit
+#mkdir $HOME/Sites/eventsauce
+#mkdir $HOME/Sites/laravel
 
 # Clone Github repositories
-./clone.sh
-
-# Removes .zshrc from $HOME (if it exists) and symlinks the .zshrc file from the .dotfiles
-rm -rf $HOME/.zshrc
-ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
-
-# Symlink the Mackup config file to the home directory
-ln -s $HOME/.dotfiles/.mackup.cfg $HOME/.mackup.cfg
+#./clone.sh
 
 # Set macOS preferences - we will run this last because this will reload the shell
-source .macos
+source macos/set-defaults.sh
+
+echo '++++++++++++++++++++++++++++++'
+echo '++++++++++++++++++++++++++++++'
+echo 'All done!'
+echo 'Things to do to make the agnoster terminal theme work:'
+echo '1. Install menlo patched font included in ~/.dotfiles/misc https://gist.github.com/qrush/1595572/raw/Menlo-Powerline.otf'
+echo '2. Install patched solarized theme included in ~/.dotfiles/misc'
+
+echo '++++++++++++++++++++++++++++++'
+echo 'Some optional tidbits'
+
+echo '1. Make sure dropbox is running first. If you have not backed up via Mackup yet, then run `mackup backup` to symlink preferences for a wide collection of apps to your dropbox. If you already had a backup via mackup run `mackup restore` You'\''ll find more info on Mackup here: https://github.com/lra/mackup.'
+echo '2. Set some sensible os x defaults by running: $HOME/.dotfiles/macos/set-defaults.sh'
+echo '3. Make a .dotfiles-custom/shell/.aliases for your personal commands'
+
+echo '++++++++++++++++++++++++++++++'
+echo '++++++++++++++++++++++++++++++'

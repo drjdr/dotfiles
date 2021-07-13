@@ -30,7 +30,7 @@ After going to our checklist above and making sure you backed everything up, we'
 
 If you did all of the above you may now follow these install instructions to setup a new Mac.
 
-1. Update macOS to the latest version with the App Store
+1. Update macOS to the latest version with the App Store, log in to the app store as your Apple ID needs to be linked
 2. [Generate a new public and private SSH key](https://docs.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) by running:
 
    ```zsh
@@ -40,7 +40,7 @@ If you did all of the above you may now follow these install instructions to set
 3. Clone this repo to `~/.dotfiles` with:
 
     ```zsh
-    git clone git@github.com:driesvints/dotfiles.git ~/.dotfiles
+    git clone git@github.com:drjdr/dotfiles.git ~/.dotfiles
     ```
 
 4. Run the installation with:

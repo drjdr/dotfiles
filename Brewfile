@@ -17,7 +17,7 @@ brew 'grep'
 brew 'httpie'
 brew 'hub'
 brew 'mackup'
-brew 'mas' # Mac App Store manager
+brew 'mas' # Mac App Store manager #TODO Add a manual sign in in the app store
 brew 'pkg-config' # https://github.com/driesvints/dotfiles/issues/20
 brew 'stripe/stripe-cli/stripe'
 brew 'svn'
@@ -34,14 +34,15 @@ brew 'gifsicle'
 
 # Development
 brew 'php'
+brew services start php
 brew 'php@7.4'
-brew 'php@7.3'
 brew 'composer'
 brew 'imagemagick'
 brew 'libmemcached'
 brew 'meilisearch'
 brew 'memcached'
 brew 'mysql'
+brew services start mysql
 brew 'nginx'
 brew 'node'
 brew 'redis'
@@ -96,11 +97,8 @@ cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
 
 # Mac App Store
-mas 'Byword', id: 420212497
-mas 'Giphy Capture', id: 668208984
 mas 'Keynote', id: 409183694
 mas 'Numbers', id: 409203825
-mas 'Spark', id: 1176895641
-mas 'Speedtest', id: 1153157709
-mas 'Things', id: 904280696
-mas 'Tweetbot', id: 1384080005
+#mas 'XCode', id: ....
+#mas 'MS office''
+#mas 'MSTeams'
