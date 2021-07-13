@@ -58,10 +58,15 @@ brew bundle
 mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'rootroot'; FLUSH PRIVILEGES;"
 
 # Install PHP extensions with PECL
-pecl install imagick memcached redis swoole
+pecl install imagick memcached redis swoole xdebug
 
 # Install global Composer packages
-composer global require laravel/installer laravel/valet beyondcode/expose
+composer global require laravel/installer laravel/valet laravel/envoy beyondcode/expose beyondcode/forge-cli phpunit/phpunit vlucas/phpdotenv 
+
+#added from freekmurze
+# composer global require spatie/phpunit-watcher
+# composer global require spatie/mixed-model-scanner-cli
+# 
 
 # Install Laravel Valet
 valet install

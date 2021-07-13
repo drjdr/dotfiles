@@ -6,12 +6,15 @@ tap 'homebrew/bundle'
 tap 'nicoverbruggen/homebrew-cask'
 
 # Binaries
+brew install ack
 brew 'awscli'
 brew 'bash' # Latest Bash version
 brew 'coreutils' # Those that come with macOS are outdated
+brew install doctl
 brew 'ffmpeg'
 brew 'gh'
 brew 'git'
+brew install ghostscript
 brew 'gnupg'
 brew 'grep'
 brew 'httpie'
@@ -24,6 +27,8 @@ brew 'svn'
 brew 'trash' # Manage the Trash bin
 brew 'tree' # List directories in a tree structure
 brew 'zlib' # Needed for Memcached
+brew install zsh-autosuggestions
+
 
 # Spatie Medialibrary
 brew 'jpegoptim'
@@ -39,6 +44,7 @@ brew 'php@7.4'
 brew 'composer'
 brew 'imagemagick'
 brew 'libmemcached'
+brew install mailhog
 brew 'meilisearch'
 brew 'memcached'
 brew 'mysql'
@@ -51,9 +57,14 @@ brew 'yarn'
 # Apps
 cask '1password'
 cask '1password-cli'
+brew install --cask alfred
+brew intsall --cask atom
 cask 'aerial'
 cask 'caffeine'
+brew install --cask coderunner
 cask 'dbngin'
+brew install --cask daisydisk
+brew install --cask endnote
 cask 'discord'
 cask 'docker'
 cask 'figma'
@@ -62,28 +73,54 @@ cask 'github'
 cask 'google-backup-and-sync'
 cask 'google-chrome'
 cask 'gpg-suite'
+brew install --cask helo
+brew install --cask horos
 cask 'imageoptim'
 cask 'insomnia'
+brew install --cask jetbrains-toolbox
+brew install --cask logitech-camera-settings
+brew install --cask logitech-presentation
+brew install --cask macvim
+brew install --cask meshlab
+brew install --cask microsoft-office
+brew install --cask microsoft-teams
+brew install --cask obs
+brew install --cask opera
+brew install --cask parallels
+brew install --cask paw
 cask 'pastebot'
+brew install --cask postman
 cask 'phpmon'
-cask 'phpstorm'
 cask 'ray'
+brew install --cask rectangle
 cask 'screenflow'
 cask 'signal'
+brew install --cask skype
 cask 'slack'
+brew install --cask slicer
+brew install --cask sourcetree
+brew install --cask spotify
+brew install --cask unity-hub
+brew install --cask sequel-ace
 cask 'tableplus'
 cask 'telegram-desktop'
 cask 'the-unarchiver'
 cask 'tinkerwell'
+brew install --cask tor-browser
 cask 'transmission'
 cask 'transmit'
 cask 'tunnelbear'
 cask 'tuple'
 cask 'visual-studio-code'
 cask 'vlc'
+brew install --cask webex
+brew install --cask whatsapp
 cask 'zoom'
+brew install --cask zotero
 
-# Quicklook
+echo 'Install some nice quicklook plugins'
+echo '-----------------------------------'
+brew install --force qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package
 cask 'qlmarkdown'
 cask 'quicklook-json'
 
@@ -100,5 +137,6 @@ cask 'font-source-serif-pro'
 mas 'Keynote', id: 409183694
 mas 'Numbers', id: 409203825
 #mas 'XCode', id: ....
-#mas 'MS office''
+#mas 'MS office'
 #mas 'MSTeams'
+mas 'ÓneNote'
