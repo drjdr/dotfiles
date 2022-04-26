@@ -11,6 +11,7 @@ fi
 if test ! $(which brew); then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+## This fails as homebrew needs 2 lines to be copied at the end.
 
 
 ## INSTALL SYMLINKS
