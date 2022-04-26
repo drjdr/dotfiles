@@ -5,7 +5,8 @@ export PATH="$DOTFILES/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
 # Load Node global installed binaries
-export PATH="$HOME/.node/bin:$PATH"
+//export PATH="$HOME/.node/bin:$PATH"
+export PATH="/opt/homebrew/lib/node_modules:$PATH"
 
 # Use project specific binaries before global ones
 export PATH="node_modules/.bin:vendor/bin:$PATH"

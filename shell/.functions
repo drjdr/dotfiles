@@ -1,11 +1,12 @@
 # Switch PHP versions
 phpv() {
-    if [ $1 = "7.4" ]; then
+    if [ $1 = "8.0" ]; then
         valet use php
     else
         valet use php@$1
     fi
     sed -in "s/128M/512M/g" /usr/local/etc/php/$1/conf.d/php-memory-limits.ini
+    sed -in "s/128M/512M/g" /opt/homebrew/etc/php/$1/conf.d/php-memory-limits.ini
     composer global update
     source ~/.zshrc
 }
@@ -15,6 +16,8 @@ alias php71="phpv 7.1"
 alias php72="phpv 7.2"
 alias php73="phpv 7.3"
 alias php74="phpv 7.4"
+alias php80="phpv 8.0"
+alias php81="phpv 8.1"
 
 # Create a new directory and enter it
 function mkd() {
@@ -61,7 +64,7 @@ function weather() {
    city="$1"
 
    if [ -z "$city" ]; then
-      city="Antwerp"
+      city="Brussels"
    fi
 
    eval "curl http://wttr.in/${city}"

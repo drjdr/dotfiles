@@ -53,6 +53,7 @@ brew update
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
 brew bundle
+brew analytics off
 
 # Set default MySQL root password and auth type
 mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_password BY 'rootroot'; FLUSH PRIVILEGES;"
@@ -60,27 +61,48 @@ mysql -u root -e "ALTER USER root@localhost IDENTIFIED WITH mysql_native_passwor
 # Install PHP extensions with PECL
 pecl install imagick memcached redis swoole xdebug
 
+# If imagick is giving an error for pcre2 (installed with brew), try to simlink it
+# ln -s /opt/homebrew/Cellar/pcre2/10.37_1/include/pcre2.h /opt/homebrew/Cellar/php/8.0.8_1/include/php/ext/pcre/pcre2.h
+
+# For memcached we should have installed libmemcached, zlib and memcached with brew, but we need to link them when installing with pecl
+# > pecl install memcached
+# libmemcached directory [no] : /opt/homebrew/opt/libmemcached/
+# zlib directory [no] : /opt/homebrew/opt/zlib/
+# use system fastlz [no] :
+# enable igbinary serializer [no] :
+# enable msgpack serializer [no] :
+# enable json serializer [no] :
+# enable server protocol [no] :
+# enable sasl [yes] :
+# enable sessions [yes] :
+
+# Then suddenly swoole would also install...
+
 # Install global Composer packages
-composer global require laravel/installer laravel/valet laravel/envoy beyondcode/expose beyondcode/forge-cli phpunit/phpunit vlucas/phpdotenv 
+composer global require laravel/installer laravel/valet laravel/envoy laravel/forge-cli beyondcode/expose beyondcode/forge-cli phpunit/phpunit vlucas/phpdotenv 
 
 #added from freekmurze
 # composer global require spatie/phpunit-watcher
 # composer global require spatie/mixed-model-scanner-cli
 # 
 
+# Spatie Browsershot requires puppeteer
+npm install puppeteer --global
+# There seems to be an issue where php/Symfony process is looking to find npm and node in /usr/local/bin and not reading the $PATH vars, so lets make symlinks to solve this
+sudo ln -s /opt/homebrew/bin/node /usr/local/bin/node
+sudo ln -s /opt/homebrew/bin/npm /usr/local/bin/npm
+
 # Install Laravel Valet
 valet install
 
 # Create a Sites directory
-#mkdir $HOME/Sites
+mkdir $HOME/Code
 
 # Create sites subdirectories
-#mkdir $HOME/Sites/blade-ui-kit
-#mkdir $HOME/Sites/eventsauce
-#mkdir $HOME/Sites/laravel
+mkdir $HOME/Code/Sites
 
 # Clone Github repositories
-#./clone.sh
+./code/clone.sh
 
 # Set macOS preferences - we will run this last because this will reload the shell
 source macos/set-defaults.sh

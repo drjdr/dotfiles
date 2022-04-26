@@ -26,3 +26,6 @@ export GREP_OPTIONS="--color=auto"
 # JAVA_HOME is an important environment variable
 # export JAVA_HOME=$(/usr/libexec/java_home)
 # brew install maven will get you openjdk 15.
+
+export LDFLAGS="-L/opt/homebrew/opt/zlib/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/zlib/include"

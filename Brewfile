@@ -69,6 +69,7 @@ cask 'discord'
 cask 'docker'
 cask 'figma'
 cask 'firefox'
+cask 'gimp'
 cask 'github'
 cask 'google-backup-and-sync'
 cask 'google-chrome'
@@ -90,6 +91,7 @@ brew install --cask parallels
 brew install --cask paw
 cask 'pastebot'
 brew install --cask postman
+brew install --cask powershell
 cask 'phpmon'
 cask 'ray'
 brew install --cask rectangle
@@ -128,10 +130,14 @@ cask 'quicklook-json'
 cask 'font-lato'
 cask 'font-open-sans'
 cask 'font-roboto'
+brew install font-roboto-mono-for-powerline
 cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
+
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
 
 # Mac App Store
 mas 'Keynote', id: 409183694
@@ -139,4 +145,6 @@ mas 'Numbers', id: 409203825
 #mas 'XCode', id: ....
 #mas 'MS office'
 #mas 'MSTeams'
-mas 'ÓneNote'
+mas 'OneNote'
+mas 'Parcel', id: 375589283
+mas 'TweetDeck', id: 485812721
