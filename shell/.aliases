@@ -38,8 +38,8 @@ alias o="open ."
 alias l="ls -laF"
 
 # PhpStorm
-alias pstorm='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/PhpStorm/ch-0/202.7319.77/PhpStorm.app `pwd`'
-alias pcharm='open -a /Applications/PyCharm\ Professional.app `pwd`'
+alias pstorm='phpstorm .'
+alias pcharm='pycharm .'
 
 # Redis
 alias flush-redis="redis-cli FLUSHALL"
@@ -83,5 +83,5 @@ alias speedupbackup="sudo sysctl debug.lowpri\_throttle_enabled=0"
 alias speeddownbackup="sudo sysctl debug.lowpri\_throttle_enabled=1"
 
 # Laravel Deploy AA
-alias deploy-app-augmented-anatomy-com-production="cd ~/Code/serve-it/Infrastructure/Sites/app.augmented-anatomy.com && envoy run deploy --env=production; cd ~/Code/app.augmented-anatomy.com/"
-alias deploy-app-augmented-anatomy-com-develop="cd ~/Code/serve-it/Infrastructure/Sites/app.augmented-anatomy.com && envoy run deploy --env=develop; cd ~/Code/app.augmented-anatomy.com/"
+alias deploy-app-augmented-anatomy-com-production="cd ~/Code/PHP/serve-it/Infrastructure/Sites/app.augmented-anatomy.com && envoy run deploy --env=production; cd ~/Code/Sites/app.augmented-anatomy.com/"
+alias deploy-app-augmented-anatomy-com-develop="cd ~/Code/PHP/serve-it/Infrastructure/Sites/app.augmented-anatomy.com && envoy run deploy --env=develop; cd ~/Code/Sites/app.augmented-anatomy.com/"

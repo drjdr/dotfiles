@@ -22,3 +22,7 @@ export MANPAGER="less -X"
 
 # Always enable colored `grep` output
 export GREP_OPTIONS="--color=auto"
+
+# JAVA_HOME is an important environment variable
+# export JAVA_HOME=$(/usr/libexec/java_home)
+# brew install maven will get you openjdk 15.
